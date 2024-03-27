@@ -13,7 +13,7 @@ APPCFG = LoadConfig()
 # Setting page title and header
 # ===================================
 im = Image.open("images/maestro.png")
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "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"
 
 st.set_page_config(page_title="Senku-Bot", page_icon=im, layout="wide")
 st.markdown(
@@ -22,10 +22,28 @@ st.markdown(
 )
 st.divider()
 st.markdown(
-        "<center><i>Senku-Bot is an up-to-date LLM assistant designed to provide clear and concise explanations of scientific concepts <b>and relevant papers</b>. As a Q&A bot, it does not keep track of your conversation and will treat each input independently.  Do not hesitate to clear the conversation once in a while! Hoping that Senku-Bot will help get quick answers and expand your scientific knowledge.</center>",
+        "<center><i>Hello! I'm Senku-Bot, your assistant for scientific explanations and relevant papers. Feel free to ask me anything about science, and I'll do my best to provide you with clear and concise answers, along with any relevant research papers that might help further your understanding. Let's explore the wonders of science together! If you have any questions, just ask.</center>",
         unsafe_allow_html=True,
     )
 st.divider()
+
+def message(text, is_user):
+    if is_user:
+        # User message
+        st.markdown(f"""
+            <div style="display: flex; align-items: center;">
+                <img src="https://anhanime.com/wp-content/uploads/2022/10/A%CC%89nh-Senku-14.jpg" alt="Avatar" style="border-radius: 50%; width: 40px; height: 40px;">
+                <p style="margin-left: 10px;">{text}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    else:
+        # Bot message
+        st.markdown(f"""
+            <div style="display: flex; align-items: center;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvvEzpnAIacHuu7jPDRorH594FXfylOfi_Lg&usqp=CAU" alt="Avatar" style="border-radius: 50%; width: 40px; height: 40px;">
+                <p style="margin-left: 10px;">{text}</p>
+            </div>
+            """, unsafe_allow_html=True)
 
 # ===================================
 # Initialise session state variables

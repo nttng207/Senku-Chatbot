@@ -6,9 +6,9 @@ Senku-Bot is an up-to-date LLM assistant designed to provide clear and concise e
 
 # Examples
 
-What is LLava?            |  Do you know what the Memformer is?
+Do you know about YOLO           |  Do you know FishEye dataset?
 :-------------------------:|:-------------------------:
-![llava](images/llava.png)  |  ![memformer](images/memformer.png)
+![yolo](images/yolo.png)  |  ![mamba](image/fe.png)
 
 # Implementation Details
 
@@ -38,6 +38,7 @@ I used [llama_index]( https://docs.llamaindex.ai/en/stable/) to build the RAG pi
 - clone this repository
 - Create a new Python environment provided with pip
 - run `pip install -r requirements.txt`
+- add your OpenAI API Key
 - run `streamlit run src/app.py`
 - Now open the 'External URL' in your browser. Enjoy the bot.
 
