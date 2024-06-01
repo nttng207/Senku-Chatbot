@@ -2,7 +2,7 @@ Senku-Bot is an up-to-date LLM assistant designed to provide clear and concise e
 
 
 <div style="text-align:center">
-    ![maestro](images/senku.jpg)
+    <img src="images/senku.jpg" alt="senku">
 </div>
 
 
