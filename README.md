@@ -6,9 +6,9 @@ Senku-Bot is an up-to-date LLM assistant designed to provide clear and concise e
 
 # Examples
 
-Do you know about YOLO           |  Do you know FishEye dataset?
-:-------------------------:|:-------------------------:
-![yolo](images/yolo.png)  |  ![mamba](image/fe.png)
+Do you know about YOLO          
+:-------------------------:
+![yolo](images/yolo.png)  
 
 # Implementation Details
 
@@ -26,7 +26,7 @@ To build the scraper, I used the open-source `arxiv` API and  `PyPDF2` to ease t
 
 ### A RAG Pipeline ([Paper](https://arxiv.org/pdf/2005.11401.pdf))
 
-That retrieves the most relevant information from the scraped papers relatively to the query, and takes it as context to summarize. One of the main features I implemented (prompt engineering) is that the bot is *citing its sources*. Hence, it becomes possible to assess the veracity of the provided answer. The pipeline is using OpenAI LLMS (`embedding-v3` and `gpt-3.5-turbo`) to process the retrieval and the generation steps. Like every LLM, RAG-Maestro can be subject to hallucinations. **Making it citing the sources can help us to detect a hallucination**.
+That retrieves the most relevant information from the scraped papers relatively to the query, and takes it as context to summarize. One of the main features I implemented (prompt engineering) is that the bot is *citing its sources*. Hence, it becomes possible to assess the veracity of the provided answer. The pipeline is using OpenAI LLMS (`embedding-v3` and `gpt-3.5-turbo`) to process the retrieval and the generation steps. Like every LLM, Senku-Bot can be subject to hallucinations. **Making it citing the sources can help us to detect a hallucination**.
 
 
 I used [llama_index]( https://docs.llamaindex.ai/en/stable/) to build the RAG pipeline, specifically picked a "tree_summarizer" form query engine to generate the answer. All the hyperparameters are stored in an editable `config.yml` file.
