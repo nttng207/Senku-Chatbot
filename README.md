@@ -1,7 +1,9 @@
 Senku-Bot is an up-to-date LLM assistant designed to provide clear and concise explanations of scientific concepts **and relevant papers**. As a Q&A bot, it does not keep track of your conversation and will treat each input independently.
 
 
-![maestro](images/senku.jpg)
+<div style="text-align:center">
+    ![maestro](images/senku.jpg)
+</div>
 
 
 # Examples
