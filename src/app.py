@@ -12,7 +12,7 @@ APPCFG = LoadConfig()
 # ===================================
 # Setting page title and header
 # ===================================
-im = Image.open("images/maestro.png")
+im = Image.open("images/arXiv.png")
 os.environ["OPENAI_API_KEY"] = ""
 
 st.set_page_config(page_title="Senku-Bot", page_icon=im, layout="wide")
