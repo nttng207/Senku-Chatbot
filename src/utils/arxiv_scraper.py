@@ -43,7 +43,7 @@ def scrape_papers(args):
 
                 text += page_obj.extract_text() + " "
 
-        os.unlink(file_path)
+        #os.unlink(file_path)
         paper_doc = {"url": p.pdf_url, "title": p.title, "text": text}
         results.append(paper_doc)
     return results
@@ -58,6 +58,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     results = scrape_papers(args)
-    for i, r in enumerate(results):
-        with open(f"src/data/data_{i}.json", "w") as f:
-            json.dump(r, f)
+    # for i, r in enumerate(results):
+    #     with open(f"src/data/data_{i}.json", "w") as f:
+    #         json.dump(r, f)

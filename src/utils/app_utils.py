@@ -1,13 +1,22 @@
 from typing import List
 import streamlit as st
 import os, shutil
-from llama_index import VectorStoreIndex, ServiceContext, Document
-from llama_index.llms import OpenAI
-from llama_index import SimpleDirectoryReader
+from llama_index.core import VectorStoreIndex, ServiceContext, Document
+from llama_index.llms.openai import OpenAI
+from llama_parse import LlamaParse
+from llama_index.core import SimpleDirectoryReader
+from dotenv import load_dotenv
 
+load_dotenv()
+
+llamaparser_api_key = os.getenv("LLAMA_CLOUD_API_KEY")
 
 def load_data():
-    reader = SimpleDirectoryReader(input_dir="src/data", recursive=True)
+    parser = LlamaParse(
+        api_key = llamaparser_api_key,
+        result_type="markdown")
+    file_extractor =  {".pdf": parser}
+    reader = SimpleDirectoryReader(input_dir="src/data", file_extractor=file_extractor)
     docs = reader.load_data()
     return docs
 
