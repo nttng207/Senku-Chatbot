@@ -15,6 +15,7 @@ APPCFG = LoadConfig()
 im = Image.open("images/arXiv.png")
 os.environ["OPENAI_API_KEY"] = st.secrets["openai_key"]
 
+
 st.set_page_config(page_title="Senku-Bot", page_icon=im, layout="wide")
 st.markdown(
     "<h1 style='text-align: center;'>Senku-Bot (Scientific Assistant)</h1>",
